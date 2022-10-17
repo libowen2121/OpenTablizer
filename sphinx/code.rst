@@ -1,7 +1,7 @@
 Code documentation
 ==================
 
-.. automodule:: example1
+.. automodule:: pipeline
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Model &mdash; Open Tablizer 0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Trainer" href="trainer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Open Tablizer
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Package Reference</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="pipeline.html">Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trainer.html">Trainer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#document">Document</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#document-retrieval">Document retrieval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#document-segmentation">Document segmentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#entity">Entity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-opentablizer.model.entity.ner">NER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-opentablizer.model.entity.coref">Coreference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-opentablizer.model.entity.linker">Entity linking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#key-value">Key-value</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-opentablizer.model.keyvalue.re">Relation extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-opentablizer.model.keyvalue.event">Event extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-opentablizer.model.keyvalue.attribute">Attribute classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-opentablizer.model.keyvalue.mrc">Span extraction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#preprocessor">Preprocessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#postprocessor">Postprocessor</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Open Tablizer</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Model</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="model">
+<h1>Model<a class="headerlink" href="#model" title="Permalink to this heading"></a></h1>
+<p>This page introduces the base model classes of the text-to-table pipeline.</p>
+<section id="document">
+<h2>Document<a class="headerlink" href="#document" title="Permalink to this heading"></a></h2>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#document-retrieval" id="id1">Document retrieval</a></p></li>
+<li><p><a class="reference internal" href="#document-segmentation" id="id2">Document segmentation</a></p></li>
+</ul>
+</div>
+<span class="target" id="module-opentablizer.model.document"></span><section id="document-retrieval">
+<h3><a class="toc-backref" href="#id1">Document retrieval</a><a class="headerlink" href="#document-retrieval" title="Permalink to this heading"></a></h3>
+</section>
+<section id="document-segmentation">
+<h3><a class="toc-backref" href="#id2">Document segmentation</a><a class="headerlink" href="#document-segmentation" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="entity">
+<h2>Entity<a class="headerlink" href="#entity" title="Permalink to this heading"></a></h2>
+<section id="module-opentablizer.model.entity.ner">
+<span id="ner"></span><h3>NER<a class="headerlink" href="#module-opentablizer.model.entity.ner" title="Permalink to this heading"></a></h3>
+</section>
+<section id="module-opentablizer.model.entity.coref">
+<span id="coreference"></span><h3>Coreference<a class="headerlink" href="#module-opentablizer.model.entity.coref" title="Permalink to this heading"></a></h3>
+</section>
+<section id="module-opentablizer.model.entity.linker">
+<span id="entity-linking"></span><h3>Entity linking<a class="headerlink" href="#module-opentablizer.model.entity.linker" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="key-value">
+<h2>Key-value<a class="headerlink" href="#key-value" title="Permalink to this heading"></a></h2>
+<section id="module-opentablizer.model.keyvalue.re">
+<span id="relation-extraction"></span><h3>Relation extraction<a class="headerlink" href="#module-opentablizer.model.keyvalue.re" title="Permalink to this heading"></a></h3>
+</section>
+<section id="module-opentablizer.model.keyvalue.event">
+<span id="event-extraction"></span><h3>Event extraction<a class="headerlink" href="#module-opentablizer.model.keyvalue.event" title="Permalink to this heading"></a></h3>
+</section>
+<section id="module-opentablizer.model.keyvalue.attribute">
+<span id="attribute-classification"></span><h3>Attribute classification<a class="headerlink" href="#module-opentablizer.model.keyvalue.attribute" title="Permalink to this heading"></a></h3>
+</section>
+<section id="module-opentablizer.model.keyvalue.mrc">
+<span id="span-extraction"></span><h3>Span extraction<a class="headerlink" href="#module-opentablizer.model.keyvalue.mrc" title="Permalink to this heading"></a></h3>
+</section>
+</section>
+<section id="preprocessor">
+<h2>Preprocessor<a class="headerlink" href="#preprocessor" title="Permalink to this heading"></a></h2>
+</section>
+<section id="postprocessor">
+<h2>Postprocessor<a class="headerlink" href="#postprocessor" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="trainer.html" class="btn btn-neutral float-left" title="Trainer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, bowen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

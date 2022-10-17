@@ -1,12 +1,14 @@
 def func1(arg1, arg2):
-    """This is a docstring for func1.
+    """_summary_
 
-    :param arg1: some value
-    :type arg1: _type_
-    :param arg2: another value
-    :type arg2: _type_
-    :return: arg1
-    :rtype: _type_
-    """
+    Args:
+        arg1 (_type_): _description_
+        arg2 (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """    
+    
+    
     arg1 = arg2
     return arg1

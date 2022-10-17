@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Open Tablizer’s documentation! &mdash; Open Tablizer 0.0 documentation</title>
+  <title>Open Tablizer’s documentation &mdash; Open Tablizer 0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Code documentation" href="code.html" /> 
+    <link rel="next" title="Pipeline" href="modules/pipeline.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -38,9 +38,11 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Package Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">Code documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/pipeline.html">Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/trainer.html">Trainer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/model.html">Model</a></li>
 </ul>
 
         </div>
@@ -57,7 +59,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Welcome to Open Tablizer’s documentation!</li>
+      <li>Open Tablizer’s documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -67,17 +69,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-open-tablizer-s-documentation">
-<h1>Welcome to Open Tablizer’s documentation!<a class="headerlink" href="#welcome-to-open-tablizer-s-documentation" title="Permalink to this heading"></a></h1>
+  <section id="open-tablizer-s-documentation">
+<h1>Open Tablizer’s documentation<a class="headerlink" href="#open-tablizer-s-documentation" title="Permalink to this heading"></a></h1>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">opentablizer.pipelines</span> <span class="kn">import</span> <span class="n">pipeline</span>
+<span class="kn">from</span> <span class="nn">opentablizer.postprocessor</span> <span class="kn">import</span> <span class="n">postprocess</span>
+
+<span class="c1"># Run the pipeline</span>
+<span class="n">ner</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="n">task</span><span class="o">=</span><span class="s1">&#39;ner&#39;</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;xxx&#39;</span><span class="p">,</span> <span class="n">config_file</span><span class="o">=</span><span class="s1">&#39;xxx&#39;</span><span class="p">)</span>
+<span class="n">result_json_obj</span> <span class="o">=</span> <span class="n">ner</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;xxx&#39;</span><span class="p">)</span>
+
+<span class="c1"># Postprocess the output</span>
+<span class="n">table_obj</span> <span class="o">=</span> <span class="n">postprocess</span><span class="p">(</span><span class="n">result_json_obj</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Package Reference</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">Code documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="code.html#example1.func1"><code class="docutils literal notranslate"><span class="pre">func1()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/pipeline.html">Pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/pipeline.html#opentablizer.pipeline.builder.pipeline"><code class="docutils literal notranslate"><span class="pre">pipeline()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/trainer.html">Trainer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/trainer.html#opentablizer.trainer.builder.trainer"><code class="docutils literal notranslate"><span class="pre">trainer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules/model.html">Model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules/model.html#document">Document</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#document-retrieval">Document retrieval</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#document-segmentation">Document segmentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/model.html#entity">Entity</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#module-opentablizer.model.entity.ner">NER</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#module-opentablizer.model.entity.coref">Coreference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#module-opentablizer.model.entity.linker">Entity linking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/model.html#key-value">Key-value</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#module-opentablizer.model.keyvalue.re">Relation extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#module-opentablizer.model.keyvalue.event">Event extraction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#module-opentablizer.model.keyvalue.attribute">Attribute classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/model.html#module-opentablizer.model.keyvalue.mrc">Span extraction</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/model.html#preprocessor">Preprocessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/model.html#postprocessor">Postprocessor</a></li>
 </ul>
 </li>
 </ul>
 </div>
+</section>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading"></a></h1>
@@ -92,7 +135,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="code.html" class="btn btn-neutral float-right" title="Code documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules/pipeline.html" class="btn btn-neutral float-right" title="Pipeline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

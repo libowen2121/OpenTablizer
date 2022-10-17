@@ -1,3 +1,4 @@
 /sphinx/_build 
 .DS_Store
 *.pyc
+**/__pycache__/

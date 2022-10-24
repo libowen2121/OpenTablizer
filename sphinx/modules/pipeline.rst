@@ -6,9 +6,9 @@ This page introduces the base classes of the text-to-table pipeline, which is ut
 .. contents:: Contents
     :local:
 
-.. currentmodule:: opentablizer.pipeline
+.. currentmodule:: opentablizer.pipelines
 
-.. automodule:: opentablizer.pipeline.builder
+.. automodule:: opentablizer.pipelines.builder
     :members:
     :undoc-members:
     :show-inheritance:

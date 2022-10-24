@@ -1,6 +1,6 @@
 from tkinter.messagebox import NO
 from typing import Union, List
-from opentablizer.model.base import Model
+from opentablizer.models.base import Model
 
 
 class BaseTrainer():

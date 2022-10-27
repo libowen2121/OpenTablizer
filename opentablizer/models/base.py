@@ -39,7 +39,7 @@ class Model(ABC):
         pass
         model = build_from_cfg(cfg, registers.models, group_key=cfg.task)
     
-    @classmethod
+    @staticmethod
     def save_pretrained():
         pass
     
@@ -47,9 +47,9 @@ class Model(ABC):
     def from_off_the_shelf(cfg: ConfigDict):
         return build_from_cfg(cfg, registers.models, group_key=cfg.task)
     
-    @classmethod
-    def from_rules():
-        pass
+    @staticmethod
+    def from_rules(cfg: ConfigDict):
+        return build_from_cfg(cfg, registers.models, group_key=cfg.task)
     
 if __name__ == '__main__':
     Model.from_off_the_shelf()

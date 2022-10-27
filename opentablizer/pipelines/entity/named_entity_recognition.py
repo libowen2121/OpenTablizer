@@ -14,9 +14,11 @@ from opentablizer.utils.register import registers
 class NamedEntityRecognitionPipeline(Pipeline):
     
     def __init__(self, cfg: ConfigDict = None) -> None:
+        cfg.type = cfg.model    # change the type to model
         if cfg.model_source == 'from_off_the_shelf':
-            cfg.type = cfg.model    # change the type to model
             model = Model.from_off_the_shelf(cfg)
+        elif cfg.model_source == 'from_rules':
+            model = Model.from_rules(cfg)
         else:
             # TODO
             pass

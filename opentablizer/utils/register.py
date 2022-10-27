@@ -18,6 +18,7 @@ ALL_PIPELINES = [
 
 ALL_ENTITY_MODELS = [
     'hanlp_named_entity_recognition',
+    'regex_named_entity_recognition'
 ]
 
 # Models to be imported

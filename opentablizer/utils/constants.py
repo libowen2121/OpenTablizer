@@ -11,6 +11,7 @@ class Pipelines:
 
 class Models:
     hanlp_named_entity_recognition = 'hanlp_named_entity_recognition'
+    regex_named_entity_recognition = 'regex_named_entity_recognition'
 
 
 DEFAULT_GROUP_NAME = 'default'
